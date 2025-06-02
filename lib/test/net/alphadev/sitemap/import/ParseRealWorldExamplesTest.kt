@@ -27,4 +27,14 @@ class ParseRealWorldExamplesTest {
             assertEquals(84, parsed.urls.size)
         }
     }
+
+    @Test
+    fun testYoastComSitemapParsesCorrectly() {
+        readResource("yoast.com.sitemap.xml") {
+            val parsed = parseSitemapIndex(it.readString())
+
+            assertNotNull(parsed)
+            assertEquals(22, parsed.sitemaps.size)
+        }
+    }
 }
