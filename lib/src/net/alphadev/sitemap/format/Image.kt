@@ -6,17 +6,9 @@ import nl.adaptivity.xmlutil.serialization.XmlElement
 import nl.adaptivity.xmlutil.serialization.XmlSerialName
 
 @Serializable
-@XmlSerialName("url", namespace = "http://www.sitemaps.org/schemas/sitemap/0.9", prefix = "")
-data class Url(
-
+@XmlSerialName("image", namespace = "http://www.google.com/schemas/sitemap-image/1.1", prefix = "image")
+data class Image(
     @XmlElement
     @XmlSerialName("loc")
-    val location: String,
-
-    @XmlElement
-    @XmlSerialName("lastmod")
-    val lastModified: String,
-
-    @XmlElement
-    val images: List<Image> = emptyList()
+    val location: String
 )
