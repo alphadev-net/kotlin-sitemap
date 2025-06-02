@@ -1,0 +1,14 @@
+product:
+  type: lib
+  platforms:
+    - jvm
+    - android
+
+dependencies:
+  - "org.jetbrains.kotlinx:kotlinx-io-core:0.7.0": exported
+  - "io.github.pdvrieze.xmlutil:core:0.90.3"
+  - "io.github.pdvrieze.xmlutil:serialization:0.90.3"
+
+settings:
+  kotlin:
+    serialization: enabled
