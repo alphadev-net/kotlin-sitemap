@@ -56,4 +56,24 @@ class GoogleSampleTest {
             assertEquals("Companies A, B in Merger Talks", news.title)
         }
     }
+
+    /**
+     * Original can be found here:
+     * https://developers.google.com/search/docs/crawling-indexing/sitemaps/video-sitemaps#example-video-sitemap
+     */
+    @Test
+    fun testGoogleVideoSitemapParsesCorrectly() {
+        readResource("google.video.sample.sitemap.xml") {
+            val parsed = parseUrlSet(it.readString())
+
+            assertNotNull(parsed)
+            assertEquals(1, parsed.urls.size)
+            assertEquals(2, parsed.urls[0].videos.size)
+
+            val video = parsed.urls[0].videos[0]
+            assertNotNull(video)
+            assertEquals("allow", video.restriction?.relationship)
+            assertEquals("IE GB US CA", video.restriction?.locations)
+        }
+    }
 }

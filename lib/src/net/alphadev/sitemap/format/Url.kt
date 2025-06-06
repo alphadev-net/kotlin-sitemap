@@ -20,4 +20,6 @@ data class Url(
     val images: List<Image> = emptyList(),
 
     val news: News? = null,
+
+    val videos: List<Video> = emptyList(),
 )
