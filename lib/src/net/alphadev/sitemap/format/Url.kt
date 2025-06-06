@@ -14,7 +14,7 @@ data class Url(
 
     @XmlElement
     @XmlSerialName("lastmod")
-    val lastModified: String,
+    val lastModified: String? = null,
 
     @XmlElement
     val images: List<Image> = emptyList()
