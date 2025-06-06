@@ -17,5 +17,7 @@ data class Url(
     val lastModified: String? = null,
 
     @XmlElement
-    val images: List<Image> = emptyList()
+    val images: List<Image> = emptyList(),
+
+    val news: News? = null,
 )

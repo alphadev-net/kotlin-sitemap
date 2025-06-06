@@ -1,5 +1,6 @@
 package net.alphadev.sitemap.import
 
+import kotlinx.datetime.LocalDate
 import kotlinx.io.readString
 import net.alphadev.sitemap.readResource
 import kotlin.test.Test
@@ -28,6 +29,31 @@ class GoogleSampleTest {
             val secondEntry = parsed.urls[1]
             assertEquals("https://example.com/sample2.html", secondEntry.location)
             assertEquals("https://example.com/picture.jpg", secondEntry.images[0].location)
+        }
+    }
+
+    /**
+     * Original can be found here:
+     * https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap#example-news-sitemap
+     */
+    @Test
+    fun testGoogleNewsSitemapParsesCorrectly() {
+        readResource("google.news.sample.sitemap.xml") {
+            val parsed = parseUrlSet(it.readString())
+
+            assertNotNull(parsed)
+            assertEquals(1, parsed.urls.size)
+
+            val entry = parsed.urls[0]
+            assertEquals("http://www.example.org/business/article55.html", entry.location)
+
+            val news = entry.news
+            assertNotNull(news)
+            assertEquals("The Example Times", news.publication.name)
+            assertEquals("en", news.publication.language)
+
+            assertEquals(LocalDate.parse("2008-12-23", LocalDate.Formats.ISO), news.publicationDate)
+            assertEquals("Companies A, B in Merger Talks", news.title)
         }
     }
 }
