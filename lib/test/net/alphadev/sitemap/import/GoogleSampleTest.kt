@@ -1,11 +1,13 @@
 package net.alphadev.sitemap.import
 
+import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
 import kotlinx.io.readString
 import net.alphadev.sitemap.readResource
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.time.Duration.Companion.seconds
 
 class GoogleSampleTest {
 
@@ -72,8 +74,15 @@ class GoogleSampleTest {
 
             val video = parsed.urls[0].videos[0]
             assertNotNull(video)
+
+            assertEquals(600.seconds, video.duration)
+            assertEquals(Instant.fromEpochMilliseconds(1636111230000), video.expirationDate)
+
             assertEquals("allow", video.restriction?.relationship)
             assertEquals("IE GB US CA", video.restriction?.locations)
+
+            assertEquals("https://www.example.com/users/grillymcgrillerson", video.uploader?.info)
+            assertEquals("GrillyMcGrillerson", video.uploader?.name?.trim())
         }
     }
 }
