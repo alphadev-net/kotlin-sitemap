@@ -5,10 +5,11 @@ product:
     - android
 
 dependencies:
-  - "org.jetbrains.kotlinx:kotlinx-io-core:0.7.0": exported
-  - "io.github.pdvrieze.xmlutil:core:0.90.3"
-  - "io.github.pdvrieze.xmlutil:serialization:0.90.3"
-  - "org.jetbrains.kotlinx:kotlinx-datetime:0.6.2"
+  - $libs.kotlinx.datetime
+  - $libs.kotlinx.io.core: exported
+  - $libs.pdvrieze.xmlutil.core
+  - $libs.pdvrieze.xmlutil.serialization
+
 
 settings:
   kotlin:
