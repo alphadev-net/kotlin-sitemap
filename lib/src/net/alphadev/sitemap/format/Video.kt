@@ -1,9 +1,9 @@
 package net.alphadev.sitemap.format
 
-import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
 import nl.adaptivity.xmlutil.serialization.XmlSerialName
+import kotlin.time.Instant
 import kotlin.time.Duration
 
 @Serializable
@@ -33,6 +33,7 @@ data class Video(
 
     @XmlElement
     @XmlSerialName("expiration_date")
+    @Serializable(with = IsoDateSerializer::class)
     val expirationDate: Instant? = null,
 
     @XmlElement
@@ -44,6 +45,7 @@ data class Video(
 
     @XmlElement
     @XmlSerialName("publication_date")
+    @Serializable(with = IsoDateSerializer::class)
     val publicationDate: Instant? = null,
 
     @XmlElement

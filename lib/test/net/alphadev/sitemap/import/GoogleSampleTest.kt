@@ -1,12 +1,12 @@
 package net.alphadev.sitemap.import
 
-import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
 import kotlinx.io.readString
 import net.alphadev.sitemap.readResource
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.time.Instant
 import kotlin.time.Duration.Companion.seconds
 
 class GoogleSampleTest {
