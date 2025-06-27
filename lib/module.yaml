@@ -10,10 +10,11 @@ dependencies:
   - $libs.pdvrieze.xmlutil.core
   - $libs.pdvrieze.xmlutil.serialization
 
-
 settings:
   kotlin:
-    serialization: enabled
+    serialization:
+      enabled: true
+      version: 1.9.0
     optIns:
       - kotlin.time.ExperimentalTime
   publishing:
