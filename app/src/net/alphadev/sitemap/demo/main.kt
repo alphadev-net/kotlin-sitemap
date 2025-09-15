@@ -12,7 +12,7 @@ suspend fun main() {
     printSitemapOverview(sitemap ?: return)
 }
 
-private suspend fun loadSitemapContents(): String? {
+private suspend fun loadSitemapContents(): String {
     val client = HttpClient()
         return client.get("https://jan.alphadev.net/sitemap.xml")
             .bodyAsText()
