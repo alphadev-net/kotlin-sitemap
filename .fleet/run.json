@@ -9,6 +9,11 @@
             "type": "amper",
             "name": "test",
             "tasks": ["test"]
+        },
+        {
+            "type": "amper",
+            "name": "run",
+            "tasks": ["run", "-m", "app"]
         }
     ]
 }
