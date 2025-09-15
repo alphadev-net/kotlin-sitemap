@@ -2,25 +2,20 @@ package net.alphadev.sitemap.demo
 
 import net.alphadev.sitemap.format.UrlSet
 import net.alphadev.sitemap.import.parseUrlSet
-import okhttp3.OkHttpClient
-import okhttp3.Request
+import io.ktor.client.HttpClient
+import io.ktor.client.request.get
+import io.ktor.client.statement.bodyAsText
 
-fun main() {
+suspend fun main() {
     val sitemapData = loadSitemapContents()
     val sitemap = parseUrlSet(sitemapData ?: return)
     printSitemapOverview(sitemap ?: return)
 }
 
-private fun loadSitemapContents(): String? {
-    val client = OkHttpClient()
-
-    val request = Request.Builder()
-        .url("https://jan.alphadev.net/sitemap.xml")
-        .build()
-
-    val response = client.newCall(request).execute()
-
-    return response.body?.string()
+private suspend fun loadSitemapContents(): String? {
+    val client = HttpClient()
+        return client.get("https://jan.alphadev.net/sitemap.xml")
+            .bodyAsText()
 }
 
 private fun printSitemapOverview(sitemap: UrlSet) {
