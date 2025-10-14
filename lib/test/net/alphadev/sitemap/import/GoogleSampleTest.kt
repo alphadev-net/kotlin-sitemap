@@ -1,8 +1,8 @@
 package net.alphadev.sitemap.import
 
+import de.sipgate.dachlatten.io.readResource
 import kotlinx.datetime.LocalDate
 import kotlinx.io.readString
-import net.alphadev.sitemap.readResource
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
