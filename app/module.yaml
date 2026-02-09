@@ -1,5 +1,10 @@
 product: jvm/app
 
+settings:
+  kotlin:
+    optIns:
+      - kotlin.time.ExperimentalTime
+
 dependencies:
   - ../lib
   - $libs.ajalt.clikt

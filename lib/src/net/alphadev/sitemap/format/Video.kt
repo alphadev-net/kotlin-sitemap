@@ -3,11 +3,13 @@ package net.alphadev.sitemap.format
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
 import nl.adaptivity.xmlutil.serialization.XmlSerialName
-import kotlin.time.Instant
 import kotlin.time.Duration
+import kotlin.time.ExperimentalTime
+import kotlin.time.Instant
 
 @Serializable
 @XmlSerialName("video", namespace = "http://www.google.com/schemas/sitemap-video/1.1", prefix = "video")
+@ExperimentalTime
 public data class Video(
     @XmlElement
     @XmlSerialName("thumbnail_loc")

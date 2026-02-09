@@ -5,7 +5,9 @@ import kotlinx.io.readString
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.time.ExperimentalTime
 
+@OptIn(ExperimentalTime::class)
 class ParseRealWorldExamplesTest {
 
     @Test

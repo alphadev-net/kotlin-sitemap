@@ -18,8 +18,6 @@ settings:
     serialization:
       enabled: true
       version: 1.9.0
-    optIns:
-      - kotlin.time.ExperimentalTime
     freeCompilerArgs:
       - -Xexplicit-api=warning
   publishing:
