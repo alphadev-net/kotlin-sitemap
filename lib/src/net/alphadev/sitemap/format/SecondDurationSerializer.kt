@@ -9,7 +9,7 @@ import kotlinx.serialization.encoding.Encoder
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 
-object SecondDurationSerializer: KSerializer<Duration> {
+public object SecondDurationSerializer: KSerializer<Duration> {
     override val descriptor: SerialDescriptor
         get() = PrimitiveSerialDescriptor("net.alphadev.sitemap.format.SecondDurationSerializer", PrimitiveKind.LONG)
 

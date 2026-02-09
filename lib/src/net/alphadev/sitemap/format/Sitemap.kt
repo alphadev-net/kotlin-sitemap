@@ -6,7 +6,7 @@ import nl.adaptivity.xmlutil.serialization.XmlSerialName
 
 @Serializable
 @XmlSerialName("sitemap", namespace = "http://www.sitemaps.org/schemas/sitemap/0.9", prefix = "")
-data class Sitemap(
+public data class Sitemap(
 
     @XmlElement
     @XmlSerialName("loc")

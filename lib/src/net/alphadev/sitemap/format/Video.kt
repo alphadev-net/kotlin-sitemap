@@ -8,7 +8,7 @@ import kotlin.time.Duration
 
 @Serializable
 @XmlSerialName("video", namespace = "http://www.google.com/schemas/sitemap-video/1.1", prefix = "video")
-data class Video(
+public data class Video(
     @XmlElement
     @XmlSerialName("thumbnail_loc")
     val thumbnaillocation: String,

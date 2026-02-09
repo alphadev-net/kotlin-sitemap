@@ -9,11 +9,10 @@ import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 import nl.adaptivity.xmlutil.serialization.XmlElement
 import nl.adaptivity.xmlutil.serialization.XmlSerialName
-import java.lang.NumberFormatException
 
 @Serializable
 @XmlSerialName("url", namespace = "http://www.sitemaps.org/schemas/sitemap/0.9", prefix = "")
-data class Url(
+public data class Url(
 
     @XmlElement
     @XmlSerialName("loc")
@@ -39,8 +38,8 @@ data class Url(
     val priority: Float? = null
 )
 
-object PrioritySerializer: KSerializer<Float?> {
-    override val descriptor = PrimitiveSerialDescriptor("Priority", PrimitiveKind.FLOAT)
+public object PrioritySerializer: KSerializer<Float?> {
+    override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("Priority", PrimitiveKind.FLOAT)
 
     override fun deserialize(decoder: Decoder): Float? {
         val candidate = decoder.decodeString()

@@ -7,7 +7,7 @@ import nl.adaptivity.xmlutil.serialization.XmlSerialName
 
 @Serializable
 @XmlSerialName("news", namespace = "http://www.google.com/schemas/sitemap-news/0.9", prefix = "news")
-data class News(
+public data class News(
     val publication: Publication,
 
     @XmlElement

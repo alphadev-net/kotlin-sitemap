@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlValue
 
 @Serializable
-data class Price(
+public data class Price(
     val currency: String,
 
     @XmlValue
