@@ -1,11 +1,12 @@
 product: jvm/app
 
+dependencies:
+  - ../lib
+  - $libs.ajalt.clikt
+  - $ktor.client.cio
+
 settings:
   kotlin:
     optIns:
       - kotlin.time.ExperimentalTime
-
-dependencies:
-  - ../lib
-  - $libs.ajalt.clikt
-  - $libs.ktor.client
+  ktor: enabled
