@@ -21,7 +21,7 @@ settings:
     freeCompilerArgs:
       - -Xexplicit-api=warning
   publishing:
-    name: kotlin-sitemap
+    artifactId: kotlin-sitemap
 
 apply:
   - ../publish.module-template.yaml
